@@ -1,0 +1,140 @@
+Sub Main
+
+End Sub
+
+Sub Macros4
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:InsertPara", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dim args2(1) as new com.sun.star.beans.PropertyValue
+args2(0).Name = "Count"
+args2(0).Value = 1
+args2(1).Name = "Select"
+args2(1).Value = true
+
+dispatcher.executeDispatch(document, ".uno:GoRight", "", 0, args2())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:ChangeCaseToSentenceCase", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dim args4(1) as new com.sun.star.beans.PropertyValue
+args4(0).Name = "Count"
+args4(0).Value = 1
+args4(1).Name = "Select"
+args4(1).Value = false
+
+dispatcher.executeDispatch(document, ".uno:GoLeft", "", 0, args4())
+
+rem ----------------------------------------------------------------------
+dim args5(0) as new com.sun.star.beans.PropertyValue
+args5(0).Name = "Text"
+args5(0).Value = "* "
+
+dispatcher.executeDispatch(document, ".uno:InsertText", "", 0, args5())
+
+End Sub
+
+sub Macros31
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+
+rem ----------------------------------------------------------------------
+dim args1(1) as new com.sun.star.beans.PropertyValue
+args1(0).Name = "Count"
+args1(0).Value = 1
+args1(1).Name = "Select"
+args1(1).Value = false
+
+dispatcher.executeDispatch(document, ".uno:GoUp", "", 0, args1())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:GoToNextWord", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:StartOfLineSel", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:Copy", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:GoToNextPara", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:Paste", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dim args7(0) as new com.sun.star.beans.PropertyValue
+args7(0).Name = "Text"
+args7(0).Value = "   "
+
+dispatcher.executeDispatch(document, ".uno:InsertText", "", 0, args7())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:GoToNextPara", "", 0, Array())
+
+
+end sub
+
+
+sub Macros3
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+
+rem ----------------------------------------------------------------------
+dim args1(0) as new com.sun.star.beans.PropertyValue
+args1(0).Name = "Text"
+args1(0).Value = "    "
+
+dispatcher.executeDispatch(document, ".uno:InsertText", "", 0, args1())
+
+
+end sub
+
+
+sub Macros2
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:SwBackspace", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:SwBackspace", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:SwBackspace", "", 0, Array())
+
+rem ----------------------------------------------------------------------
+dispatcher.executeDispatch(document, ".uno:SwBackspace", "", 0, Array())
+
+
+end sub
